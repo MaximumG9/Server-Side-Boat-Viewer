@@ -1,3 +1,4 @@
 accessWidener v2 named
 accessible field net/minecraft/client/render/WorldRenderer entityRenderDispatcher Lnet/minecraft/client/render/entity/EntityRenderDispatcher;
 accessible field net/minecraft/client/Keyboard client Lnet/minecraft/client/MinecraftClient;
+accessible method net/minecraft/client/Keyboard debugLog (Lnet/minecraft/text/Text;)V

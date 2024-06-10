@@ -1,9 +1,7 @@
 package com.maximumg9.server_side_boat_viewer.mixins;
 
 import com.maximumg9.server_side_boat_viewer.ServerSideBoatViewer;
-import com.mojang.logging.LogUtils;
 import net.minecraft.client.Keyboard;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,6 +19,7 @@ public class KeyboardMixin {
     private void addKeybind(int key, CallbackInfoReturnable<Boolean> cir) {
         if(key == 89) {
             ServerSideBoatViewer.renderingServerBoats = !ServerSideBoatViewer.renderingServerBoats;
+            ((Keyboard) ((Object) this)).debugLog(Text.of(ServerSideBoatViewer.renderingServerBoats ? "Activated Server Boat Rendering" : "Deactivated Server Boat Rendering"));
         }
     }
 }
