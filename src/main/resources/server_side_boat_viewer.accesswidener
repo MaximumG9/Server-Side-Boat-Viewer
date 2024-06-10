@@ -1,0 +1,3 @@
+accessWidener v2 named
+accessible field net/minecraft/client/render/WorldRenderer entityRenderDispatcher Lnet/minecraft/client/render/entity/EntityRenderDispatcher;
+accessible field net/minecraft/client/Keyboard client Lnet/minecraft/client/MinecraftClient;
