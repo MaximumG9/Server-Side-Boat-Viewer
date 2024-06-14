@@ -4,13 +4,11 @@ import com.maximumg9.server_side_boat_viewer.ServerSideBoatViewer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.WorldRenderer;
-import net.minecraft.client.render.entity.BoatEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.server.integrated.IntegratedServer;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -31,7 +29,7 @@ public class WorldRendererMixin {
                     double d = ssentity.getX();
                     double e = ssentity.getY();
                     double f = ssentity.getZ();
-                    float g = MathHelper.lerp(tickDelta, ssentity.prevYaw, entity.getYaw());
+                    float g = entity.getYaw();
                     ((WorldRenderer) ((Object) this)).entityRenderDispatcher.render(ssentity, d - cameraX, e - cameraY, f - cameraZ, g, tickDelta, matrices, vertexConsumers, ((WorldRenderer) ((Object) this)).entityRenderDispatcher.getLight(entity, tickDelta));
 
                 }
